@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - piedra
+  - material
+  - suelo
+  - enemigo
+  - camPiedra
+  - catapulta
   layers:
   - Default
   - TransparentFX
