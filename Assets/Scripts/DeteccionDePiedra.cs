@@ -10,6 +10,7 @@ public class DeteccionDePiedra : MonoBehaviour
     
     private Transform _posInicial;
     private Transform paloCatapulta;
+    public GameObject btnMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +30,15 @@ public class DeteccionDePiedra : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    /*private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.collider.tag == "material")
         {
-            /*camaraPrincipal.SetActive(false);
-            camaraPiedra.SetActive(true);*/
+            btnMaterial.SetActive(true);
             Debug.Log("ya se fue");
             StartCoroutine(VolverAposicion());
         }
-    }
+    }*/
 
     public IEnumerator VolverAposicion() 
     {

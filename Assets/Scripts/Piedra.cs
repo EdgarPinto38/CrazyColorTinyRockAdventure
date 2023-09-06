@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Piedra : MonoBehaviour
 {
-    private GameObject camaraPrincipal, camaraPiedra;
-    private Camera _camMain;
+   
     public Camera camP;
 
 
     private void Start()
     {
-        camaraPrincipal = GameObject.FindGameObjectWithTag("MainCamera");
-        camaraPiedra = GameObject.FindGameObjectWithTag("camPiedra");
+        
 
         
     }
@@ -33,7 +31,8 @@ public class Piedra : MonoBehaviour
     {
         if (collision.gameObject.tag == "suelo")
         {
-            General.hayPiedra = true;
+            
+            Globals.estaEnSuelo = true;
             Debug.Log("ya esta en el suelo");
             StartCoroutine(ActivarCamaraPrincipal());
             
@@ -47,27 +46,24 @@ public class Piedra : MonoBehaviour
         {
             General.hayPiedra = true;
             camP.enabled = true;
+            Globals.activarBTNpiedra = false;
 
         }
     }
 
     IEnumerator ActivarCamaraPrincipal()
     {
-        /* yield return new WaitForSeconds(1);
-         General.hayPiedra = false;
-         camaraPiedra.SetActive(false);
-         camaraPrincipal.SetActive(true);
-         yield return new WaitForSeconds(1);
-         camaraPrincipal.SetActive(false);
-         camaraPiedra.SetActive(true);
-         Destroy(gameObject);*/
         
         camP.enabled = true;
         yield return new WaitForSeconds(1);
-        General.hayPiedra = false;
         camP.enabled = false;
-        yield return new WaitForSeconds(1);
+        Globals.seGeneroPiedra = 0;
+        Globals.estaEnSuelo = false;
+        Globals.activarBTNpiedra = true;
+        yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
+        
+       
 
 
 

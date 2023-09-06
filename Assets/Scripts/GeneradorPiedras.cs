@@ -10,6 +10,7 @@ public class GeneradorPiedras : MonoBehaviour
     public void GenerarPiedra()
     {
         Instantiate(piedra1,spawnPoint.transform.position,spawnPoint.transform.rotation);
+        Globals.seGeneroPiedra = 1;
         
     }
 }

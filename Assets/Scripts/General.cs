@@ -15,7 +15,7 @@ public class General : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hayPiedra == true)
+        if (Globals.estaEnSuelo == true)
         {
             mainCam.enabled = false;
         }
