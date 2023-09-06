@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class GeneradorMateriales : MonoBehaviour
 {
-    public GameObject material1;
+    public GameObject []materiales;
     public Transform spawnPoint;
 
-    public void GenerarMaterial1()
+    public void GenerarMaterial(int num)
     {
-        Instantiate(material1, spawnPoint.transform.position, spawnPoint.transform.rotation);
+        if (num == 1)
+        {
+            Instantiate(materiales[0], spawnPoint.transform.position, spawnPoint.transform.rotation);
+        }
+        else if (num == 2)
+        {
+            Instantiate(materiales[1], spawnPoint.transform.position, spawnPoint.transform.rotation);
+        }
+        else if (num == 3)
+        {
+            Instantiate(materiales[2], spawnPoint.transform.position, spawnPoint.transform.rotation);
+        }
+       
         
     }
     // Start is called before the first frame update

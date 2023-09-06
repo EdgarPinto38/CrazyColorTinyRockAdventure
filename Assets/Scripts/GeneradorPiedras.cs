@@ -4,13 +4,27 @@ using UnityEngine;
 
 public class GeneradorPiedras : MonoBehaviour
 {
-    public GameObject piedra1;
+    public GameObject []piedra;
     public Transform spawnPoint;
 
-    public void GenerarPiedra()
+    public void GenerarPiedra(int num)
     {
-        Instantiate(piedra1,spawnPoint.transform.position,spawnPoint.transform.rotation);
-        Globals.seGeneroPiedra = 1;
+        if (num==1)
+        {
+            Instantiate(piedra[0], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            Globals.seGeneroPiedra = 1;
+        }
+        else if (num==2)
+        {
+            Instantiate(piedra[1], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            Globals.seGeneroPiedra = 1;
+        }
+        else if (num==3)
+        {
+            Instantiate(piedra[2], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            Globals.seGeneroPiedra = 1;
+        }
+        
         
     }
 }
