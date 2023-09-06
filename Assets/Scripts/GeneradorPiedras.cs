@@ -9,21 +9,35 @@ public class GeneradorPiedras : MonoBehaviour
 
     public void GenerarPiedra(int num)
     {
-        if (num==1)
+        if (num == 1)
         {
             Instantiate(piedra[0], spawnPoint.transform.position, spawnPoint.transform.rotation);
             Globals.seGeneroPiedra = 1;
+            Globals.seApretoBoton = true;
         }
-        else if (num==2)
-        {
-            Instantiate(piedra[1], spawnPoint.transform.position, spawnPoint.transform.rotation);
-            Globals.seGeneroPiedra = 1;
+        else {
+
+            if (num == 2)
+            {
+                Instantiate(piedra[1], spawnPoint.transform.position, spawnPoint.transform.rotation);
+                Globals.seGeneroPiedra = 1;
+                Globals.seApretoBoton = true;
+            }
+
+            else
+            {
+                if (num == 3)
+                {
+                    Instantiate(piedra[2], spawnPoint.transform.position, spawnPoint.transform.rotation);
+                    Globals.seGeneroPiedra = 1;
+                    Globals.seApretoBoton = true;
+                }
+            }
+
         }
-        else if (num==3)
-        {
-            Instantiate(piedra[2], spawnPoint.transform.position, spawnPoint.transform.rotation);
-            Globals.seGeneroPiedra = 1;
-        }
+
+        
+       
         
         
     }

@@ -31,6 +31,15 @@ public class Catapulta : MonoBehaviour
             mCamera.enabled = true;
             btnPiedra.SetActive(true);
         }
+
+        if (Globals.seApretoBoton == true) 
+        {
+            btnPiedra.SetActive(false);
+        }
+        else
+        {
+            btnPiedra.SetActive(true);
+        }
         
     }
 
@@ -40,6 +49,7 @@ public class Catapulta : MonoBehaviour
         if (collision.collider.tag == "piedra")
         {
             btnMaterial.SetActive(true);
+            btnPiedra.SetActive(false);
         }
 
         

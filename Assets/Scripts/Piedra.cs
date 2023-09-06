@@ -60,6 +60,7 @@ public class Piedra : MonoBehaviour
         Globals.seGeneroPiedra = 0;
         Globals.estaEnSuelo = false;
         Globals.activarBTNpiedra = true;
+        Globals.seApretoBoton = false;
         yield return new WaitForSeconds(0.2f);
         Destroy(this.gameObject);
         
